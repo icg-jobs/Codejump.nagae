@@ -1,9 +1,10 @@
 @use "mixin" as *;
+@use "destyle";
 
 :root {
   --root-font-size: $baseFontSize;
   --color-bg: #f5f5f5;
-  --color-text: #333;
+  --color-text: #383e45;
   --color-white: #fff;
   // --color-accentA: #64C1B8; 後で変更してOK
   // --color-accentB: #E4007F; 後で変更してOK
@@ -14,4 +15,49 @@
   font-feature-settings: "palt";
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+
+// ここからモバイル版------------------
+
+body {
+  color: #383e45;
+  #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    .site-title {
+      width: 120px;
+      line-height: 1px;
+      padding: 10px 0;
+      a {
+        display: block;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  .wrapper {
+    max-width: 960px;
+    margin: 0 auto 100px auto;
+    padding: 0 4%;
+    text-align: center;
+  }
+  #header ul {
+    display: flex;
+    padding: 10px 0;
+    li {
+      margin-left: 30px;
+  }
+  }
+}
+
+// ここからPC版------------------
+
+@media screen and (min-width: 768px) {
+
+  body {
+  }
 }

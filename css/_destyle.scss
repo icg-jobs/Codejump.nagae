@@ -1,7 +1,9 @@
-@charset "UTF-8";
+@use "mixin" as *;
 /*! destyle.css v3.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+
 /* Reset box-model and set borders */
 /* ============================================ */
+
 *,
 ::before,
 ::after {
@@ -12,11 +14,13 @@
 
 /* Document */
 /* ============================================ */
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  * 3. Remove gray overlay on links for iOS.
  */
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -25,9 +29,11 @@ html {
 
 /* Sections */
 /* ============================================ */
+
 /**
  * Remove the margin in all browsers.
  */
+
 body {
   margin: 0;
 }
@@ -35,12 +41,14 @@ body {
 /**
  * Render the `main` element consistently in IE.
  */
+
 main {
   display: block;
 }
 
 /* Vertical rhythm */
 /* ============================================ */
+
 p,
 table,
 blockquote,
@@ -55,6 +63,7 @@ dl {
 
 /* Headings */
 /* ============================================ */
+
 h1,
 h2,
 h3,
@@ -65,42 +74,12 @@ h6 {
   font-weight: inherit;
   margin: 0;
   line-height: 1.4;
-}
-h1::before, h1::after,
-h2::before,
-h2::after,
-h3::before,
-h3::after,
-h4::before,
-h4::after,
-h5::before,
-h5::after,
-h6::before,
-h6::after {
-  content: "";
-  width: 0;
-  height: 0;
-  display: block;
-}
-h1::before,
-h2::before,
-h3::before,
-h4::before,
-h5::before,
-h6::before {
-  margin-top: calc((1 - 1.4) * 0.5em);
-}
-h1::after,
-h2::after,
-h3::after,
-h4::after,
-h5::after,
-h6::after {
-  margin-bottom: calc((1 - 1.4) * 0.5em);
+  @include del-space(1.4);
 }
 
 /* Lists (enumeration) */
 /* ============================================ */
+
 ul,
 ol {
   margin: 0;
@@ -110,6 +89,7 @@ ol {
 
 /* Lists (definition) */
 /* ============================================ */
+
 dt {
   font-weight: bold;
 }
@@ -120,10 +100,12 @@ dd {
 
 /* Grouping content */
 /* ============================================ */
+
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
+
 hr {
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
@@ -138,6 +120,7 @@ hr {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
+
 pre {
   font-family: monospace, monospace; /* 1 */
   font-size: inherit; /* 2 */
@@ -149,9 +132,11 @@ address {
 
 /* Text-level semantics */
 /* ============================================ */
+
 /**
  * Remove the gray background on active links in IE 10.
  */
+
 a {
   background-color: transparent;
   text-decoration: none;
@@ -162,14 +147,15 @@ a {
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
+
 abbr[title] {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
+
 b,
 strong {
   font-weight: bolder;
@@ -179,6 +165,7 @@ strong {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
+
 code,
 kbd,
 samp {
@@ -189,6 +176,7 @@ samp {
 /**
  * Add the correct font size in all browsers.
  */
+
 small {
   font-size: 80%;
 }
@@ -197,6 +185,7 @@ small {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
+
 sub,
 sup {
   font-size: 75%;
@@ -215,9 +204,11 @@ sup {
 
 /* Replaced content */
 /* ============================================ */
+
 /**
  * Prevent vertical alignment issues.
  */
+
 svg,
 img,
 embed,
@@ -228,19 +219,20 @@ iframe {
 
 /* Forms */
 /* ============================================ */
+
 /**
  * Reset form fields to make them styleable.
  * 1. Make form elements stylable across systems iOS especially.
  * 2. Inherit text-transform from parent.
  */
+
 button,
 input,
 optgroup,
 select,
 textarea {
   -webkit-appearance: none; /* 1 */
-  -moz-appearance: none;
-       appearance: none;
+  appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -255,38 +247,39 @@ textarea {
 /**
  * Reset radio and checkbox appearance to preserve their look in iOS.
  */
-[type=checkbox] {
+
+[type="checkbox"] {
   -webkit-appearance: checkbox;
-  -moz-appearance: checkbox;
-       appearance: checkbox;
+  appearance: checkbox;
 }
 
-[type=radio] {
+[type="radio"] {
   -webkit-appearance: radio;
-  -moz-appearance: radio;
-       appearance: radio;
+  appearance: radio;
 }
 
 /**
  * Correct cursors for clickable elements.
  */
+
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   cursor: pointer;
 }
 
 button:disabled,
-[type=button]:disabled,
-[type=reset]:disabled,
-[type=submit]:disabled {
+[type="button"]:disabled,
+[type="reset"]:disabled,
+[type="submit"]:disabled {
   cursor: default;
 }
 
 /**
  * Improve outlines for Firefox and unify style with input elements & buttons.
  */
+
 :-moz-focusring {
   outline: auto;
 }
@@ -298,6 +291,7 @@ select:disabled {
 /**
  * Remove padding
  */
+
 option {
   padding: 0;
 }
@@ -305,6 +299,7 @@ option {
 /**
  * Reset to invisible
  */
+
 fieldset {
   margin: 0;
   padding: 0;
@@ -318,6 +313,7 @@ legend {
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
+
 progress {
   vertical-align: baseline;
 }
@@ -325,6 +321,7 @@ progress {
 /**
  * Remove the default vertical scrollbar in IE 10+.
  */
+
 textarea {
   overflow: auto;
 }
@@ -332,22 +329,25 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
  * 1. Correct the outline style in Safari.
  */
-[type=search] {
+
+[type="search"] {
   outline-offset: -2px; /* 1 */
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type=search]::-webkit-search-decoration {
+
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -355,6 +355,7 @@ textarea {
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Fix font inheritance.
  */
+
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
@@ -363,15 +364,18 @@ textarea {
 /**
  * Clickable labels
  */
+
 label[for] {
   cursor: pointer;
 }
 
 /* Interactive */
 /* ============================================ */
+
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
+
 details {
   display: block;
 }
@@ -379,6 +383,7 @@ details {
 /*
  * Add the correct display in all browsers.
  */
+
 summary {
   display: list-item;
 }
@@ -386,15 +391,18 @@ summary {
 /*
  * Remove outline for editable content.
  */
+
 [contenteditable]:focus {
   outline: auto;
 }
 
 /* Tables */
 /* ============================================ */
+
 /**
 1. Correct table border color inheritance in all Chrome and Safari.
 */
+
 table {
   border-color: inherit; /* 1 */
   border-collapse: collapse;
@@ -414,49 +422,3 @@ th {
   text-align: left;
   font-weight: bold;
 }
-
-:root {
-  --root-font-size: $baseFontSize;
-  --color-bg: #f5f5f5;
-  --color-text: #383e45;
-  --color-white: #fff;
-  font-family: "Zen Maru Gothic", "Noto Sans JP", "游ゴシック体", YuGothic, sans-serif;
-  text-align: justify;
-  font-feature-settings: "palt";
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-body {
-  color: #383e45;
-}
-body #header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-}
-body #header .site-title {
-  width: 120px;
-  line-height: 1px;
-  padding: 10px 0;
-}
-body #header .site-title a {
-  display: block;
-}
-body #header .site-title img {
-  max-width: 100%;
-}
-body .wrapper {
-  max-width: 960px;
-  margin: 0 auto 100px auto;
-  padding: 0 4%;
-  text-align: center;
-}
-body #header ul {
-  display: flex;
-  padding: 10px 0;
-}
-body #header ul li {
-  margin-left: 30px;
-}/*# sourceMappingURL=style.css.map */
