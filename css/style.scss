@@ -1,0 +1,17 @@
+@use "mixin" as *;
+
+:root {
+  --root-font-size: $baseFontSize;
+  --color-bg: #f5f5f5;
+  --color-text: #333;
+  --color-white: #fff;
+  // --color-accentA: #64C1B8; 後で変更してOK
+  // --color-accentB: #E4007F; 後で変更してOK
+  font-family: 'Zen Maru Gothic', 'Noto Sans JP', "游ゴシック体", YuGothic, sans-serif;
+  // line-height: 2.2;
+  // letter-spacing: .16rem;
+  text-align: justify;
+  font-feature-settings: "palt";
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}

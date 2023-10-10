@@ -1,0 +1,12 @@
+@charset "UTF-8";
+:root {
+  --root-font-size: $baseFontSize;
+  --color-bg: #f5f5f5;
+  --color-text: #333;
+  --color-white: #fff;
+  font-family: "Zen Maru Gothic", "Noto Sans JP", "游ゴシック体", YuGothic, sans-serif;
+  text-align: justify;
+  font-feature-settings: "palt";
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}/*# sourceMappingURL=style.css.map */
