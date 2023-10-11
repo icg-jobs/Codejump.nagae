@@ -11,13 +11,14 @@
 <body>
     <header id="header" class="wrapper">
         <h1 class="site-title">
-            <a href="index.html"></a>
-            <img src="img/logo.svg" alt="ロゴ">
+            <a href="index.html">
+                <img src="img/logo.svg" alt="ロゴ">
+            </a>
         </h1>
         <nav>
             <ul>
-                <li>About</li>
-                <li>Bicycle</li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#bicycle">Bicycle</a></li>
             </ul>
         </nav>
     </header>
@@ -25,9 +26,9 @@
         <div id="mainvisual">
             <img src="img/mainvisual.jpg" alt="自転車の写真">
         </div>
-        <section id="about">
+        <section id="about" class="wrapper">
             <h2>About</h2>
-            <div>
+            <div class="content">
                 <img src="img/about.jpg" alt="アイコン">
                 <div class="text">
                     <h3>KAKERU MIYAICHI</h3>
@@ -37,8 +38,8 @@
                 </div>
             </div>
         </section>
-        <section id="bicycle">
-            <h2>bicycle</h2>
+        <section id="bicycle" class="wrapper">
+            <h2>Bicycle</h2>
             <ul>
                 <li>
                     <img src="img/bicycle1.jpg" alt="">
